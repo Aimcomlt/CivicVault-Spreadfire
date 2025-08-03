@@ -1,0 +1,16 @@
+{
+  "name": "game-core",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json --noEmit"
+  }
+}
