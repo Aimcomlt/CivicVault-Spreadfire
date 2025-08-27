@@ -1,6 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+const { createSlice } = toolkit as any;
 
-interface PolicyState {
+export interface PolicyState {
   enacted: string[];
 }
 
@@ -10,7 +12,7 @@ const policySlice = createSlice({
   name: 'policy',
   initialState,
   reducers: {
-    enactPolicy(state, action: PayloadAction<string>) {
+    enactPolicy(state: PolicyState, action: PayloadAction<string>) {
       state.enacted.push(action.payload);
     }
   }

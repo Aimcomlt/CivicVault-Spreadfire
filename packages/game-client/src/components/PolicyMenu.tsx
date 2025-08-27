@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../store';
 import { enactPolicy } from 'game-core';
-import { RootState } from '../store';
 
 export default function PolicyMenu() {
-  const dispatch = useDispatch();
-  const policies = useSelector((state: RootState) => state.policy.enacted);
+  const dispatch = useAppDispatch();
+  const policies = useAppSelector(state => state.policy.enacted);
 
   const handleEnact = () => {
     dispatch(enactPolicy('New Policy'));
@@ -14,7 +13,7 @@ export default function PolicyMenu() {
     <div>
       <button onClick={handleEnact}>Enact Policy</button>
       <ul>
-        {policies.map((p, i) => (
+        {policies.map((p: string, i: number) => (
           <li key={i}>{p}</li>
         ))}
       </ul>

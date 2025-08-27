@@ -1,6 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+const { createSlice } = toolkit as any;
 
-interface EconomyState {
+export interface EconomyState {
   credits: number;
 }
 
@@ -10,7 +12,7 @@ const economySlice = createSlice({
   name: 'economy',
   initialState,
   reducers: {
-    adjustCredits(state, action: PayloadAction<number>) {
+    adjustCredits(state: EconomyState, action: PayloadAction<number>) {
       state.credits += action.payload;
     }
   }
