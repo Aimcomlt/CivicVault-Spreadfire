@@ -1,6 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+const { createSlice } = toolkit as any;
 
-interface FactionsState {
+export interface FactionsState {
   alignment: string;
 }
 
@@ -10,7 +12,7 @@ const factionsSlice = createSlice({
   name: 'factions',
   initialState,
   reducers: {
-    setAlignment(state, action: PayloadAction<string>) {
+    setAlignment(state: FactionsState, action: PayloadAction<string>) {
       state.alignment = action.payload;
     }
   }

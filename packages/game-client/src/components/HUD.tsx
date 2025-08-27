@@ -1,9 +1,8 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { useAppSelector } from '../store';
 
 export default function HUD() {
-  const score = useSelector((state: RootState) => state.combat.score);
-  const credits = useSelector((state: RootState) => state.economy.credits);
+  const score = useAppSelector(state => state.combat.score);
+  const credits = useAppSelector(state => state.economy.credits);
 
   return (
     <div>

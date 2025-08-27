@@ -1,6 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+const { createSlice } = toolkit as any;
 
-interface CombatState {
+export interface CombatState {
   score: number;
 }
 
@@ -10,7 +12,7 @@ const combatSlice = createSlice({
   name: 'combat',
   initialState,
   reducers: {
-    addScore(state, action: PayloadAction<number>) {
+    addScore(state: CombatState, action: PayloadAction<number>) {
       state.score += action.payload;
     }
   }

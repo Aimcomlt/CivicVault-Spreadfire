@@ -13,7 +13,7 @@ The repository uses npm workspaces and is organized into two packages:
 Run package scripts from the repository root with npm's workspace flag (`-w` or `--workspace`).
 
 ### Core library
-- `npm test -w game-core` – type-check the core library.
+- `npm test -w game-core` – compile the core library and run its unit tests.
 - `npm run build -w game-core` – compile TypeScript to `dist/`.
 
 ### Client
@@ -40,3 +40,6 @@ npm run build -w game-core
 ```
 
 The compiled files are output to `packages/game-core/dist/`.
+
+## Continuous Integration
+GitHub Actions runs `npm test -w game-core` and `npm test -w game-client` on every push and pull request to verify the core library and client build correctly.

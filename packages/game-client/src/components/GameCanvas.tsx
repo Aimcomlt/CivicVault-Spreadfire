@@ -1,13 +1,12 @@
 import { useRef, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import type { RootState } from '../store';
+import { useAppDispatch, useAppSelector } from '../store';
 import { addScore, adjustCredits } from 'game-core';
 
 export default function GameCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const dispatch = useDispatch();
-  const score = useSelector((state: RootState) => state.combat.score);
-  const credits = useSelector((state: RootState) => state.economy.credits);
+  const dispatch = useAppDispatch();
+  const score = useAppSelector(state => state.combat.score);
+  const credits = useAppSelector(state => state.economy.credits);
 
   // draw units and terrain whenever relevant state changes
   useEffect(() => {
