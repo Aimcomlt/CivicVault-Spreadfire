@@ -9,6 +9,10 @@ The repository uses npm workspaces and is organized into two packages:
 - **packages/game-core** – simulation engine and Redux slices for combat, economy, factions and policy.
 - **packages/game-client** – Vite-powered React front end that consumes the core library.
 
+## Contributor Documentation
+- [Architecture Overview](docs/architecture-overview.md)
+- [Game Mechanics](docs/game-mechanics.md)
+
 ## Development Scripts
 Run package scripts from the repository root with npm's workspace flag (`-w` or `--workspace`).
 
